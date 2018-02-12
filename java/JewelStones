@@ -1,0 +1,20 @@
+https://leetcode.com/problems/jewels-and-stones/description/
+
+
+class Solution {
+    public int numJewelsInStones(String J, String S) {
+        int chars[]=new int [255];
+        int n = S.length();
+        int m = J.length();
+        for(int i = 0; i < n ; i++){
+            chars[S.charAt(i)]++;
+        }
+        
+        int count = 0;
+        for(int i = 0; i < m ; i++){
+            count += chars[J.charAt(i)];
+        }
+        
+        return count;
+    }
+}
